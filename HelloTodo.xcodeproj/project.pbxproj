@@ -11,6 +11,10 @@
 		8D37DF402717205800A3D286 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D37DF3F2717205800A3D286 /* ContentView.swift */; };
 		8D37DF422717205900A3D286 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D37DF412717205900A3D286 /* Assets.xcassets */; };
 		8D37DF452717205900A3D286 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D37DF442717205900A3D286 /* Preview Assets.xcassets */; };
+		8D37DF4D271722B500A3D286 /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D37DF4C271722B500A3D286 /* Webservice.swift */; };
+		8D37DF502717233100A3D286 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D37DF4F2717233100A3D286 /* Todo.swift */; };
+		8D37DF532717244600A3D286 /* TodoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D37DF522717244600A3D286 /* TodoListViewModel.swift */; };
+		8D37DF562717248A00A3D286 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D37DF552717248A00A3D286 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		8D37DF3F2717205800A3D286 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8D37DF412717205900A3D286 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D37DF442717205900A3D286 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8D37DF4C271722B500A3D286 /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
+		8D37DF4F2717233100A3D286 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		8D37DF522717244600A3D286 /* TodoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewModel.swift; sourceTree = "<group>"; };
+		8D37DF552717248A00A3D286 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +59,10 @@
 		8D37DF3C2717205800A3D286 /* HelloTodo */ = {
 			isa = PBXGroup;
 			children = (
+				8D37DF542717247F00A3D286 /* Utils */,
+				8D37DF512717242D00A3D286 /* View Models */,
+				8D37DF4E2717231B00A3D286 /* Models */,
+				8D37DF4B271722A600A3D286 /* Services */,
 				8D37DF3D2717205800A3D286 /* HelloTodoApp.swift */,
 				8D37DF3F2717205800A3D286 /* ContentView.swift */,
 				8D37DF412717205900A3D286 /* Assets.xcassets */,
@@ -65,6 +77,38 @@
 				8D37DF442717205900A3D286 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8D37DF4B271722A600A3D286 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8D37DF4C271722B500A3D286 /* Webservice.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8D37DF4E2717231B00A3D286 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8D37DF4F2717233100A3D286 /* Todo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8D37DF512717242D00A3D286 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				8D37DF522717244600A3D286 /* TodoListViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		8D37DF542717247F00A3D286 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8D37DF552717248A00A3D286 /* Constants.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +183,10 @@
 			files = (
 				8D37DF402717205800A3D286 /* ContentView.swift in Sources */,
 				8D37DF3E2717205800A3D286 /* HelloTodoApp.swift in Sources */,
+				8D37DF4D271722B500A3D286 /* Webservice.swift in Sources */,
+				8D37DF502717233100A3D286 /* Todo.swift in Sources */,
+				8D37DF532717244600A3D286 /* TodoListViewModel.swift in Sources */,
+				8D37DF562717248A00A3D286 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

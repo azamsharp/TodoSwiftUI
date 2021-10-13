@@ -8,9 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject private var todoListVM = TodoListViewModel()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            
+            VStack {
+                List(todoListVM.todoItems) { todoItem in
+                    Text(todoItem.title)
+                }
+            }.onAppear {
+                todoListVM.populateTodos()
+            }
+            .navigationTitle("Todos")
+            
+        }
     }
 }
 
