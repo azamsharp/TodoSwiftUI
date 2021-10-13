@@ -13,6 +13,9 @@ struct Constants {
         
         static let allTodosURL = URL(string: "https://warp-wiry-rugby.glitch.me/todos")!
         
+        static func deleteTaskURL(_ taskId: Int) -> URL {
+            return URL(string: "https://warp-wiry-rugby.glitch.me/todos/\(taskId)")!
+        }
     }
     
     

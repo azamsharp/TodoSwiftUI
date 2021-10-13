@@ -15,13 +15,25 @@ struct ContentView: View {
         NavigationView {
             
             VStack {
-                List(todoListVM.todoItems) { todoItem in
-                    Text(todoItem.title)
-                }
-            }.onAppear {
-                todoListVM.populateTodos()
-            }
-            .navigationTitle("Todos")
+               
+                List {
+                    ForEach(todoListVM.todoItems) { todoItem in
+                        HStack {
+                            Text(todoItem.title)
+                            Spacer()
+                            Text(todoItem.priority)
+                        }
+                    }.onDelete { indexSet in
+                        indexSet.forEach { index in
+                            let todoItem = todoListVM.todoItems[index]
+                            todoListVM.deleteTodoItem(todoItem)
+                        }
+                    }
+                }.onAppear(perform: {
+                    todoListVM.populateTodos()
+                })
+                
+                .navigationTitle("Todos")
             
         }
     }
@@ -31,4 +43,4 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
-}
+}}

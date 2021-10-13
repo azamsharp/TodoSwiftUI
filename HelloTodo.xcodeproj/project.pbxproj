@@ -15,6 +15,7 @@
 		8D37DF502717233100A3D286 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D37DF4F2717233100A3D286 /* Todo.swift */; };
 		8D37DF532717244600A3D286 /* TodoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D37DF522717244600A3D286 /* TodoListViewModel.swift */; };
 		8D37DF562717248A00A3D286 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D37DF552717248A00A3D286 /* Constants.swift */; };
+		8D37DF582717401200A3D286 /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D37DF572717401200A3D286 /* GenericResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		8D37DF4F2717233100A3D286 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		8D37DF522717244600A3D286 /* TodoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewModel.swift; sourceTree = "<group>"; };
 		8D37DF552717248A00A3D286 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8D37DF572717401200A3D286 /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				8D37DF4F2717233100A3D286 /* Todo.swift */,
+				8D37DF572717401200A3D286 /* GenericResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				8D37DF3E2717205800A3D286 /* HelloTodoApp.swift in Sources */,
 				8D37DF4D271722B500A3D286 /* Webservice.swift in Sources */,
 				8D37DF502717233100A3D286 /* Todo.swift in Sources */,
+				8D37DF582717401200A3D286 /* GenericResponse.swift in Sources */,
 				8D37DF532717244600A3D286 /* TodoListViewModel.swift in Sources */,
 				8D37DF562717248A00A3D286 /* Constants.swift in Sources */,
 			);

@@ -11,6 +11,25 @@ class TodoListViewModel: ObservableObject {
     
     @Published var todoItems = [TodoItemViewModel]()
     
+    func deleteTodoItem(_ todoItem: TodoItemViewModel) {
+        
+        Webservice().deleteTodoItem(url: Constants.Urls.deleteTaskURL(todoItem.id)) { result in
+           
+            switch result {
+                case .success(let response):
+                    if let response = response {
+                        if response.success {
+                            self.populateTodos()
+                        }
+                    }
+                case .failure(let error):
+                    print(error)
+                    
+            }
+            
+        }
+    }
+    
     func populateTodos() {
         
         Webservice().getAllTodos(url: Constants.Urls.allTodosURL) { result in
@@ -29,11 +48,14 @@ class TodoListViewModel: ObservableObject {
 
 struct TodoItemViewModel: Identifiable {
     
-    let id = UUID() 
     private let todo: Todo
     
     init(todo: Todo) {
         self.todo = todo
+    }
+   
+    var id: Int {
+        todo.id
     }
     
     var title: String {
@@ -41,7 +63,7 @@ struct TodoItemViewModel: Identifiable {
     }
     
     var priority: String {
-        todo.priority
+        todo.priority.uppercased()
     }
     
 }
