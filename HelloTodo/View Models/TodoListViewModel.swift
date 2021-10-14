@@ -9,11 +9,36 @@ import Foundation
 
 class TodoListViewModel: ObservableObject {
     
+    @Published var todoTitle: String = ""
+    @Published var selectedPriority: String = "medium"
+    
     @Published var todoItems = [TodoItemViewModel]()
+    
+    func createTodoItem() {
+        
+        let todo = Todo(title: todoTitle, priority: selectedPriority)
+        Webservice().createTodoItem(url: Constants.Urls.createTodoURL, todo: todo) { result in
+            switch result {
+                case .success(let response):
+                    if let response = response {
+                        if response.success {
+                            self.populateTodos()
+                        }
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+            }
+        }
+        
+    }
     
     func deleteTodoItem(_ todoItem: TodoItemViewModel) {
         
-        Webservice().deleteTodoItem(url: Constants.Urls.deleteTaskURL(todoItem.id)) { result in
+        guard let todoItemId = todoItem.id else {
+            return
+        }
+        
+        Webservice().deleteTodoItem(url: Constants.Urls.deleteTaskURL(todoItemId)) { result in
            
             switch result {
                 case .success(let response):
@@ -54,7 +79,7 @@ struct TodoItemViewModel: Identifiable {
         self.todo = todo
     }
    
-    var id: Int {
+    var id: Int? {
         todo.id
     }
     

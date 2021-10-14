@@ -16,6 +16,19 @@ struct ContentView: View {
             
             VStack {
                
+                TextField("Enter title", text: $todoListVM.todoTitle)
+                    .textFieldStyle(.roundedBorder)
+                
+                Picker("Priority", selection: $todoListVM.selectedPriority) {
+                    Text("Low").tag("low")
+                    Text("Medium").tag("medium")
+                    Text("High").tag("high")
+                }.pickerStyle(.segmented)
+                
+                Button("Add Task") {
+                    todoListVM.createTodoItem()
+                }.padding(.top, 10)
+                
                 List {
                     ForEach(todoListVM.todoItems) { todoItem in
                         HStack {
@@ -35,7 +48,7 @@ struct ContentView: View {
                 
                 .navigationTitle("Todos")
             
-        }
+            }.padding()
     }
 }
 

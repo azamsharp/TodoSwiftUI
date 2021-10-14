@@ -14,6 +14,29 @@ enum NetworkError: Error {
 
 class Webservice {
     
+    
+    func createTodoItem(url: URL,todo: Todo, completion: @escaping (Result<GenericResponse?, NetworkError>) -> Void) {
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = try? JSONEncoder().encode(todo)
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            guard let data = data, error == nil,
+                  (response as? HTTPURLResponse)?.statusCode == 200 else {
+                      completion(.failure(.badRequest))
+                      return
+                  }
+            
+            let genericResponse = try? JSONDecoder().decode(GenericResponse.self, from: data)
+            completion(.success(genericResponse))
+            
+        }.resume()
+        
+    }
+    
     func deleteTodoItem(url: URL, completion: @escaping (Result<GenericResponse?, NetworkError>) -> Void) {
         
         var request = URLRequest(url: url)

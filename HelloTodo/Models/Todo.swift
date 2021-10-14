@@ -8,7 +8,7 @@
 import Foundation
 
 struct Todo: Codable {
-    let id: Int 
+    var id: Int?
     let title: String
     let priority: String
 }
